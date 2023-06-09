@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:animation_wrappers/animation_wrappers.dart';
-import 'package:first_app/screens/toss_result_screen.dart';
+import 'package:TOSS/screens/toss_result_screen.dart';
 import 'package:flutter/material.dart';
 
 class TossTimerScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:first_app/screens/toss_timer_screen.dart';
+import 'package:TOSS/screens/toss_timer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_wrappers/animation_wrappers.dart';
 import 'package:fluttertoast/fluttertoast.dart';

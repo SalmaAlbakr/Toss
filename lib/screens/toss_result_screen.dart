@@ -1,4 +1,4 @@
-import 'package:first_app/screens/toss_home_screen.dart';
+import 'package:TOSS/screens/toss_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:dart_random_choice/dart_random_choice.dart';
 import 'package:animation_wrappers/animation_wrappers.dart';

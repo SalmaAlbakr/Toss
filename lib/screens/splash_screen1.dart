@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:animation_wrappers/animation_wrappers.dart';
-import 'package:first_app/screens/toss_home_screen.dart';
+import 'package:TOSS/screens/toss_home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -110,7 +110,7 @@ class _SplashScreenState extends State<SplashScreen>
       );
     },);
   }
-
+// ic_launcher
 
   @override
   Widget build(BuildContext context) {

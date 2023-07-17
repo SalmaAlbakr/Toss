@@ -1,0 +1,12 @@
+{
+ "Lang" : "عربي" ,
+ "AppName" : "T o s s" ,
+  "StartText" : "Hello, Let's Get Started" ,
+  "TextFieldText" : "Enter your Options here" ,
+  "Add" : "add" ,
+  "ToastText" : "plz enter an options" ,
+  "pick" : "Pick" ,
+  "ResultText" : "Your Result is :" ,
+  "Again" : "Try New One" ,
+  "RePick" : "Another choice"
+}

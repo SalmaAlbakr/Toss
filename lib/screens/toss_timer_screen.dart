@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 
 class TossTimerScreen extends StatefulWidget {
   final List<String> inputList;
-  const TossTimerScreen({
-    required this.inputList, Key? key})
+  Color AppColor = Colors.black ;
+   TossTimerScreen({
+    required this.inputList,
+    required this.AppColor,
+    Key? key})
       : super(key: key);
 
   @override
@@ -76,6 +79,7 @@ class _TossTimerScreenState extends State<TossTimerScreen> {
             builder: (BuildContext context) {
               return TossResultScreen(
                 inputList: widget.inputList,
+                AppColor : widget.AppColor
               );
             },
           ),

@@ -1,4 +1,5 @@
 import 'package:TOSS/screens/toss_home_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:dart_random_choice/dart_random_choice.dart';
 import 'package:animation_wrappers/animation_wrappers.dart';
@@ -7,8 +8,12 @@ import 'package:shape_of_view_null_safe/shape_of_view_null_safe.dart';
 
 class TossResultScreen extends StatefulWidget {
   final List<String> inputList;
-  const TossResultScreen({
-    required this.inputList, Key? key})
+  Color AppColor = Colors.black ;
+   TossResultScreen({
+    required this.inputList,
+    required this.AppColor,
+
+     Key? key})
       : super(key: key);
 
   @override
@@ -76,7 +81,10 @@ class _TossResultScreenState extends State<TossResultScreen>
     return Scaffold(
       backgroundColor: Colors.deepPurpleAccent[100],
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple[400],
+        backgroundColor:
+        // widget.AppColor
+         Colors.deepPurple[400]
+        ,
         title: Row(
           children: [
             const Text(
@@ -143,10 +151,10 @@ class _TossResultScreenState extends State<TossResultScreen>
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
+             Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                "Your Result is :",
+                "ResultText".tr(),
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -208,17 +216,17 @@ class _TossResultScreenState extends State<TossResultScreen>
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => TossHomeScreen(inputList: [],
+                          builder: (context) => TossHomeScreen(inputList: [], AppColor: widget.AppColor
 
                           ),
                         ),
                       );
                     },
-                    child: const Text(
-                      "Try New One",
+                    child:  Text(
+                      "Again".tr(),
                       style: TextStyle(
                         color: Colors.deepPurple,
-                        fontSize: 20,
+                        fontSize: 17,
                       ),
                     ),
                   ),
@@ -235,11 +243,13 @@ class _TossResultScreenState extends State<TossResultScreen>
                         },
                       );
                     },
-                    child: const Text(
-                      "Another choice",
+                    child:  Text(
+                      "RePick".tr(),
+                      maxLines: 10,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: Colors.deepPurple,
-                        fontSize: 20,
+                        fontSize: 17,
                       ),
                     ),
                   ),

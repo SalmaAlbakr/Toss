@@ -43,23 +43,3 @@ class FirstScreen extends StatelessWidget {
   }
 }
 
-// class test extends StatelessWidget {
-//   const test({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       floatingActionButton: FloatingActionButton(onPressed: (){
-//         // if (context.locale == Locale('ar')){
-//         //
-//         //   context.setLocale(Locale('en'));
-//         // } else{
-//         //   context.setLocale(Locale('ar'));
-//         // }
-//       }),
-//       body: Center(
-//         child: Text("StartText".tr()),
-//       ),
-//     );
-//   }
-// }

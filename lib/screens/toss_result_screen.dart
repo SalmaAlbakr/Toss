@@ -82,69 +82,11 @@ class _TossResultScreenState extends State<TossResultScreen>
       backgroundColor: Colors.deepPurpleAccent[100],
       appBar: AppBar(
         backgroundColor:
-        // widget.AppColor
-         Colors.deepPurple[400]
+        //widget.AppColor
+        Colors.deepPurple[400]
         ,
-        title: Row(
-          children: [
-            const Text(
-              "T",
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-              ),
-            ),
-            const Text(
-              "O",
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white,
-              ),
-            ),
-            AnimatedBuilder(
-              animation: _controller,
-              child: const Text(
-                "\$",
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.white,
-                ),
-              ),
-              builder: (BuildContext context, Widget? child) {
-                return Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.001)
-                    ..rotateY(
-                      _controller.value * (-math.pi),
-                    ),
-                  child: child,
-                );
-              },
-            ),
-            AnimatedBuilder(
-              animation: _controller,
-              child: const Text(
-                "\$",
-                style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.white,
-                ),
-              ),
-              builder: (BuildContext context, Widget? child) {
-                return Transform(
-                  alignment: Alignment.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.001)
-                    ..rotateY(
-                      _controller.value * (-math.pi),
-                    ),
-                  child: child,
-                );
-              },
-            ),
-          ],
-        ),
+        title: Text("AppName".tr() , style: TextStyle(fontSize: 40),),
+
       ),
       body: SafeArea(
         child: Column(

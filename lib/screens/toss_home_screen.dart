@@ -144,7 +144,7 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       style: TextStyle(
-                        color: Colors.deepOrange
+                        color: Colors.black
                       ),
 
                       textInputAction: TextInputAction.next,
@@ -161,6 +161,7 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                           borderSide: BorderSide(
                             color: Colors.deepPurpleAccent,
                           ),
+                            borderRadius: BorderRadius.circular(50.0)
                         ),
 
 

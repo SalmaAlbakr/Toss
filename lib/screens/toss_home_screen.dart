@@ -1,5 +1,7 @@
+import 'package:TOSS/main.dart';
 import 'package:TOSS/model/color_model.dart';
 import 'package:TOSS/screens/change_color.dart';
+import 'package:TOSS/screens/setting_screen.dart';
 import 'package:TOSS/screens/toss_timer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animation_wrappers/animation_wrappers.dart';
@@ -44,29 +46,15 @@ class _TossHomeScreenState extends State<TossHomeScreen>
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:
-        //widget.AppColor
-        Colors.deepPurple[400]
-        ,
         title: Row(
           children: [
             Text("AppName".tr() , style: TextStyle(fontSize: 40),),
             Expanded(child: SizedBox()),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.white),
-              ),
-                clipBehavior: Clip.hardEdge,
-                onPressed: (){
-              //   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ChangeColor()));
-
-              if (context.locale == Locale('ar')){
-
-                context.setLocale(Locale('en'));
-              } else{
-                context.setLocale(Locale('ar'));
-              }
-            }, child: Text("Lang".tr(),style: TextStyle(color: Colors.black),)),
+            GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>SettingScreen() ));
+                },
+                child: Icon(Icons.settings))
           ],
         ),
 
@@ -89,7 +77,7 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                      // "Hello, Let's Get Started"
                       ,
                       style: TextStyle(
-                        color: Colors.deepPurple,
+                      //  color: Colors.deepPurple,
                         fontSize: 25,
                       ),
                     ),
@@ -178,9 +166,6 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            Colors.deepPurple,
-                          ),
                         ),
                         onPressed: () {
                           setState(
@@ -205,9 +190,6 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                            Colors.deepPurple,
-                          ),
                         ),
                         onPressed: () {
                           setState(

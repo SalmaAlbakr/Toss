@@ -29,17 +29,52 @@ void main() async {
     ),
   );
 }
-class FirstScreen extends StatelessWidget {
+class FirstScreen extends StatefulWidget {
   const FirstScreen({Key? key}) : super(key: key);
 
   @override
+  State<FirstScreen> createState() => _FirstScreenState();
+  static _FirstScreenState of(BuildContext context) =>
+      context.findAncestorStateOfType<_FirstScreenState>()!;
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  ThemeMode _themeMode = ThemeMode.system;
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: ThemeData(
+//46458C
+          appBarTheme: AppBarTheme(color: Colors.deepPurple[400]),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Color(0xFFD7BBF5))
+              )
+          ),
+
+          brightness: Brightness.light,),
+        darkTheme: ThemeData(
+          appBarTheme: AppBarTheme(color: Color(0xFF624F82)),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Color(0xFF46458C))
+              )
+          ),
+          brightness: Brightness.dark,
+          /* dark theme settings */
+        ),
+        themeMode: _themeMode,
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         home:
         SplashScreen());
+  }
+
+  void changeTheme(ThemeMode themeMode) {
+    setState(() {
+      _themeMode = themeMode;
+    });
   }
 }
 

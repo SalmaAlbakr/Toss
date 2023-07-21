@@ -48,7 +48,7 @@ class _FirstScreenState extends State<FirstScreen> {
           appBarTheme: AppBarTheme(color: Colors.deepPurple[400]),
           elevatedButtonTheme: ElevatedButtonThemeData(
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Color(0xFFD7BBF5))
+                  backgroundColor: MaterialStateProperty.all(Color(0xFF9D6DFA))
               )
           ),
 

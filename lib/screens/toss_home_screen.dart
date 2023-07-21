@@ -32,9 +32,15 @@ class _TossHomeScreenState extends State<TossHomeScreen>
     vsync: this,
   )..repeat();
   @override
+
+  void initState() {
+     _controller;
+    super.initState();
+  }
   void dispose() {
     _controller.dispose();
     controller.dispose();
+
     super.dispose();
   }
 

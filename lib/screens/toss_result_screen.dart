@@ -69,7 +69,11 @@ class _TossResultScreenState extends State<TossResultScreen>
     duration: const Duration(seconds: 5),
     vsync: this,
   )..repeat();
-
+@override
+  void initState() {
+    _controller;
+    super.initState();
+  }
   @override
   void dispose() {
     _controller.dispose();

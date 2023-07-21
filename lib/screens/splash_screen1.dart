@@ -118,18 +118,21 @@ class _SplashScreenState extends State<SplashScreen>
       backgroundColor: Colors.deepPurple[400],
       body: SafeArea(
 
-        child: Center(
-          child: Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Center(
+            child: Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
 
-                latterT,
-                latterO,
-                latterS,
-                lastS,
+                  latterT,
+                  latterO,
+                  latterS,
+                  lastS,
 
-              ],
+                ],
+              ),
             ),
           ),
         ),

@@ -12,7 +12,7 @@ import 'package:easy_localization/easy_localization.dart';
 
 class TossHomeScreen extends StatefulWidget {
   List<String> inputList = [""];
-  Color AppColor = Colors.black ;
+  Color AppColor = Colors.black;
   TossHomeScreen({
     Key? key,
     required this.inputList,
@@ -32,11 +32,11 @@ class _TossHomeScreenState extends State<TossHomeScreen>
     vsync: this,
   )..repeat();
   @override
-
   void initState() {
-     _controller;
+    _controller;
     super.initState();
   }
+
   void dispose() {
     _controller.dispose();
     controller.dispose();
@@ -44,26 +44,26 @@ class _TossHomeScreenState extends State<TossHomeScreen>
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         title: Row(
           children: [
-            Text("AppName".tr() , style: TextStyle(fontSize: 40),),
+            Text(
+              "AppName".tr(),
+              style: TextStyle(fontSize: 40),
+            ),
             Expanded(child: SizedBox()),
             GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>SettingScreen() ));
-                },
-                child: Icon(Icons.settings))
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingScreen()));
+              },
+              child: Icon(Icons.settings),
+            )
           ],
         ),
-
       ),
       body: SafeArea(
         child: Form(
@@ -74,16 +74,11 @@ class _TossHomeScreenState extends State<TossHomeScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Padding(
+                  Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                       // context.tr("StartText")
-                      "StartText".tr()
-
-                     // "Hello, Let's Get Started"
-                      ,
+                      "StartText".tr(),
                       style: TextStyle(
-                      //  color: Colors.deepPurple,
                         fontSize: 25,
                       ),
                     ),
@@ -92,7 +87,6 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                     height: 5,
                   ),
                   Expanded(
-
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: widget.inputList.length,
@@ -133,46 +127,32 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                       },
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      style: TextStyle(
-                        color: Colors.black
-                      ),
-
+                      style: TextStyle(color: Colors.black),
                       textInputAction: TextInputAction.next,
-                      decoration:  InputDecoration(
-
+                      decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.deepPurpleAccent
-                          ) ,
-                            borderRadius: BorderRadius.circular(50.0)
-                        ),
-
+                            borderSide:
+                                BorderSide(color: Colors.deepPurpleAccent),
+                            borderRadius: BorderRadius.circular(50.0)),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.deepPurpleAccent,
-                          ),
-                            borderRadius: BorderRadius.circular(50.0)
-                        ),
-
-
+                            borderSide: BorderSide(
+                              color: Colors.deepPurpleAccent,
+                            ),
+                            borderRadius: BorderRadius.circular(50.0)),
                         hintText: "TextFieldText".tr(),
                       ),
                       controller: controller,
                     ),
                   ),
-
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
-                        style: ButtonStyle(
-                        ),
+                        style: ButtonStyle(),
                         onPressed: () {
                           setState(
                             () {
@@ -181,7 +161,7 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                             },
                           );
                         },
-                        child:  Text(
+                        child: Text(
                           "Add".tr(),
                           style: TextStyle(
                             color: Colors.white,
@@ -195,8 +175,7 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       child: ElevatedButton(
-                        style: ButtonStyle(
-                        ),
+                        style: ButtonStyle(),
                         onPressed: () {
                           setState(
                             () {
@@ -214,17 +193,15 @@ class _TossHomeScreenState extends State<TossHomeScreen>
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => TossTimerScreen(
-                                     // index: widget.index,
-                                      inputList: widget.inputList,
-                                      AppColor: widget.AppColor
-                                    ),
+                                        inputList: widget.inputList,
+                                        AppColor: widget.AppColor),
                                   ),
                                 );
                               }
                             },
                           );
                         },
-                        child:  Text(
+                        child: Text(
                           "pick".tr(),
                           style: TextStyle(
                             color: Colors.white,

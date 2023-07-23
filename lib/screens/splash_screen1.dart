@@ -13,7 +13,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 5),
     vsync: this,
@@ -25,11 +24,10 @@ class _SplashScreenState extends State<SplashScreen>
     super.dispose();
   }
 
-
   Widget latterT = Text("");
   Widget latterO = Text("");
   Widget latterS = Text("");
-  Widget lastS   = Text("");
+  Widget lastS = Text("");
 
   void initState() {
     super.initState();
@@ -40,7 +38,10 @@ class _SplashScreenState extends State<SplashScreen>
           duration: Duration(seconds: 1),
           child: Text(
             "T",
-            style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold,color: Colors.white),
+            style: TextStyle(
+                fontSize: 100,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
           ),
         );
       });
@@ -51,7 +52,10 @@ class _SplashScreenState extends State<SplashScreen>
           duration: Duration(seconds: 1),
           child: Text(
             "O",
-            style: TextStyle(fontSize: 100, fontWeight: FontWeight.bold,color: Colors.white),
+            style: TextStyle(
+                fontSize: 100,
+                fontWeight: FontWeight.bold,
+                color: Colors.white),
           ),
         );
       });
@@ -62,7 +66,11 @@ class _SplashScreenState extends State<SplashScreen>
           duration: Duration(seconds: 1),
           child: AnimatedBuilder(
             animation: _controller,
-            child: Text("\$" , style:TextStyle(fontSize: 100, fontWeight: FontWeight.bold,color: Colors.white) ),
+            child: Text("\$",
+                style: TextStyle(
+                    fontSize: 100,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
             builder: (BuildContext context, Widget? child) {
               return Transform(
                 alignment: Alignment.center,
@@ -84,7 +92,11 @@ class _SplashScreenState extends State<SplashScreen>
           duration: Duration(seconds: 1),
           child: AnimatedBuilder(
             animation: _controller,
-            child: Text("\$" , style:TextStyle(fontSize: 100, fontWeight: FontWeight.bold,color: Colors.white) ),
+            child: Text("\$",
+                style: TextStyle(
+                    fontSize: 100,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
             builder: (BuildContext context, Widget? child) {
               return Transform(
                 alignment: Alignment.center,
@@ -100,24 +112,28 @@ class _SplashScreenState extends State<SplashScreen>
         );
       });
     });
-    Timer(Duration(seconds: 5) , () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) {
-            return TossHomeScreen(inputList: [],AppColor: Colors.indigo,);
-          },
-        ),
-      );
-    },);
+    Timer(
+      Duration(seconds: 5),
+      () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (BuildContext context) {
+              return TossHomeScreen(
+                inputList: [],
+                AppColor: Colors.indigo,
+              );
+            },
+          ),
+        );
+      },
+    );
   }
-// ic_launcher
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[400],
       body: SafeArea(
-
         child: Directionality(
           textDirection: TextDirection.ltr,
           child: Center(
@@ -125,12 +141,10 @@ class _SplashScreenState extends State<SplashScreen>
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   latterT,
                   latterO,
                   latterS,
                   lastS,
-
                 ],
               ),
             ),

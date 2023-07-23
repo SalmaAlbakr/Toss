@@ -8,12 +8,8 @@ import 'package:shape_of_view_null_safe/shape_of_view_null_safe.dart';
 
 class TossResultScreen extends StatefulWidget {
   final List<String> inputList;
-  Color AppColor = Colors.black ;
-   TossResultScreen({
-    required this.inputList,
-    required this.AppColor,
-
-     Key? key})
+  Color AppColor = Colors.black;
+  TossResultScreen({required this.inputList, required this.AppColor, Key? key})
       : super(key: key);
 
   @override
@@ -22,7 +18,6 @@ class TossResultScreen extends StatefulWidget {
 
 class _TossResultScreenState extends State<TossResultScreen>
     with TickerProviderStateMixin {
-
   List<Widget> anotherWidget = [
     const CircleAvatar(
       radius: 150,
@@ -64,40 +59,40 @@ class _TossResultScreenState extends State<TossResultScreen>
     ),
   ];
 
-
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 5),
     vsync: this,
   )..repeat();
-@override
+  @override
   void initState() {
     _controller;
     super.initState();
   }
+
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     Widget randomWidget = randomChoice(anotherWidget);
     return Scaffold(
       backgroundColor: Colors.deepPurpleAccent[100],
       appBar: AppBar(
-        backgroundColor:
-        //widget.AppColor
-        Colors.deepPurple[400]
-        ,
-        title: Text("AppName".tr() , style: TextStyle(fontSize: 40),),
-
+        backgroundColor: Colors.deepPurple[400],
+        title: Text(
+          "AppName".tr(),
+          style: TextStyle(fontSize: 40),
+        ),
       ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
                 "ResultText".tr(),
@@ -108,7 +103,6 @@ class _TossResultScreenState extends State<TossResultScreen>
                 ),
               ),
             ),
-
             ScaleAnimation(
               child: Stack(
                 alignment: AlignmentDirectional.center,
@@ -162,13 +156,12 @@ class _TossResultScreenState extends State<TossResultScreen>
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => TossHomeScreen(inputList: [], AppColor: widget.AppColor
-
-                          ),
+                          builder: (context) => TossHomeScreen(
+                              inputList: [], AppColor: widget.AppColor),
                         ),
                       );
                     },
-                    child:  Text(
+                    child: Text(
                       "Again".tr(),
                       style: TextStyle(
                         color: Colors.deepPurple,
@@ -178,8 +171,7 @@ class _TossResultScreenState extends State<TossResultScreen>
                   ),
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.white),
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
                     ),
                     onPressed: () {
                       setState(
@@ -189,7 +181,7 @@ class _TossResultScreenState extends State<TossResultScreen>
                         },
                       );
                     },
-                    child:  Text(
+                    child: Text(
                       "RePick".tr(),
                       maxLines: 10,
                       overflow: TextOverflow.ellipsis,
